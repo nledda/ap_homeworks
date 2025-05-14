@@ -24,4 +24,17 @@ public class Customer {
     public void setId(int id) {
         this.id = id;
     }
+
+    // Added method to respect Law of Demeter
+    public String getShippingCity() {
+        return profile.getShippingCity();
+    }
+
+    public String getShippingCountry() {
+        return profile.getShippingInfo().getCountry();
+    }
+
+    public int getShippingZip() {
+        return profile.getShippingInfo().getZip();
+    }
 }

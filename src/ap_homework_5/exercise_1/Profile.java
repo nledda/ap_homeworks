@@ -14,5 +14,18 @@ public class Profile {
         this.shippingInfo = shippingInfo;
     }
 
+    // Added method to respect Law of Demeter
+    public String getShippingCity() {
+        return shippingInfo.getCity();
+    }
+
+    public String getShippingCountry() {
+        return shippingInfo.getCountry();
+    }
+    public int getShippingZip() {
+        return shippingInfo.getZip();
+    }
+
+
 
 }
