@@ -4,7 +4,15 @@ public class Customer {
     private Profile profile;
     private int id;
 
-    public Customer(Profile profile, int id) {
+    public Customer(Profile profile, int id) throws InvalidCustomerException {
+        if (profile == null) {
+            throw new InvalidCustomerException("Profile cannot be null");
+        }
+
+        if (id < 0) {
+            throw new InvalidCustomerException("Customer ID cannot be negative");
+        }
+
         this.profile = profile;
         this.id = id;
     }
@@ -13,15 +21,20 @@ public class Customer {
         return profile;
     }
 
-    public void setProfile(Profile profile) {
+    public void setProfile(Profile profile) throws InvalidCustomerException {
+        if (profile == null) {
+            throw new InvalidCustomerException("Profile cannot be null");
+        }
         this.profile = profile;
     }
-
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(int id) throws InvalidCustomerException {
+        if (id < 0) {
+            throw new InvalidCustomerException("Customer ID cannot be negative");
+        }
         this.id = id;
     }
 
