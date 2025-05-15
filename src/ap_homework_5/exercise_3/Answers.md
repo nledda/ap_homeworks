@@ -2,11 +2,11 @@
 
 Variant 2 (letting the caller handle the exception) makes more sense in this case for several reasons:
 
-- Separation of concerns: The divide method has a single responsibility - to perform division. It shouldn't also be responsible for deciding how to handle errors.
-- Flexibility: By letting the caller handle the exception, different callers can handle the error differently based on their specific needs. Some might want to retry, others might want to use a default value, and others might want to terminate.
-- Visibility: The error becomes explicit to the caller, who is made aware that something went wrong rather than silently receiving a NaN value.
-- Consistency with other arithmetic operations: In Java, arithmetic operations typically signal errors through exceptions rather than returning special values.
-- Better testability: Methods that throw exceptions rather than handling them internally are easier to test.
+It's better to handle the code closer to the error source. 
+If you handle it in the method this simplifies the code of the caller. 
+
+On the other hand it would be possible to handle it differently in different contexts. Then it would be more useful
+to let the caller handle the exception and handle it based on the context.
 
 **c) An example where the other variant (handling exceptions within the method) makes more sense:**
 

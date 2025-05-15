@@ -34,7 +34,7 @@ Try-with-resources should be used when working with resources that need to be cl
 
 **Advantages:** 
 
-- Automatic resource management: Resources are automatically closed when execution leaves the try block
+- **Automatic resource management: Resources are automatically closed when execution leaves the try block** -> größter Vorteil auch vom Übungsleiter hervorgehoben
 - Concise code: Eliminates the need for explicit finally blocks
 - Improved exception handling: If both the try block throws an exception and the close() method throws an exception, the exception from the try block is preserved and the exception from close() is suppressed
 - No resource leaks: Even if an exception occurs, the resources will still be properly closed
