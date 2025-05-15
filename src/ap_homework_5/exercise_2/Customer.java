@@ -7,6 +7,7 @@ public class Customer {
     public Customer(Profile profile, int id) throws InvalidCustomerException {
         if (profile == null) {
             throw new InvalidCustomerException("Profile cannot be null");
+            // die Nachricht haette auch in super() in der Klasse stehen koennen
         }
 
         if (id < 0) {

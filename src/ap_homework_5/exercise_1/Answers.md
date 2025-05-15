@@ -12,6 +12,7 @@ This constructor-based dependency injection allows for greater flexibility, as t
 
 Yes, this code breaks the Law of Demeter (principle of least knowledge). The Law of Demeter states that an object should only communicate with its immediate friends and not with "strangers" or objects it can reach through other objects.
 In the EComController class, we have:
-javacustomer.getProfile().getShippingInfo().getCity()
+> javacustomer.getProfile().getShippingInfo().getCity()
+
 This chain of method calls violates the Law of Demeter because EComController is reaching through multiple objects to get to the city. It knows too much about the structure of other objects.
 A possible fix would be to add a delegate method in the Customer class that hides the implementation details:

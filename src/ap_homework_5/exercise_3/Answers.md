@@ -34,3 +34,17 @@ In summary, internal exception handling makes sense when:
 - The recovery strategy is clear and limited
 - The method's contract includes handling errors
 - The error handling is a core part of the functionality the method provides
+
+Im Logger sollte man niemals Fehler hochreichen, weil der Programmfluss nicht unterbrochen werden sollte. 
+Das sollte dann lieber intern gehandelt werden. 
+
+Financial Calculation -> da will man den Fehler dann unbedingt weiterreichen, damit der Caller dann entscheiden muss
+wie die Calculation behandelt werden muss, um die Nachvollziehbarkeit zu erhöhen. 
+
+UncheckedExceptions sind meistens Programmierfehler, CheckedExceptions sind eher Eingabefehler
+-> ArrayOutOfBounds; NullPointerException
+
+CheckedException müssen gewrofen werden und gehandelt werden
+RunTime nicht, man versucht aber über DefenseProgramming die zu vermeiden
+> aber man kann keine Errors werfen
+> 
